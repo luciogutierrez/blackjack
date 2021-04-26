@@ -52,19 +52,20 @@ def cabecera():
     print()
     print('------------------------ Solitaire Blackjack ------------------------')
     print()
-    print('Objetivo: el objetivo del juego es sumar 21 puntos sin pasarse')
+    print('Objetivo')
+    print('El objetivo del juego es sumar 21 puntos sin pasarse')
     print('pero además sumar más puntos de los obtenidos por el crupier.')
     print()
     print('Reglas')
-    print('Regla 1: el número "1" puede tomar el valor de "1" u "11" según convenga al jugador.')
-    print('Regla 2: cada número del "2" al "10" suman el mismo número de puntos a la partida.')
-    print('Regla 3: los números "11" y "12" suman 10 puntos a la partida.')
+    print('Regla 1: El número "1" puede tomar el valor de "1" u "11" según convenga al jugador.')
+    print('Regla 2: Cada número del "2" al "10" suman el mismo número de puntos a la partida.')
+    print('Regla 3: Los números "11" y "12" suman 10 puntos a la partida.')
     print()
     print('Modo de juego')
     print('1- El crupier repartirá dos cartas descubiertas al jugador y una a sí mismo.')
     print('2- Si la suma de las cartas está cerca de 21 puede plantarse y ceder el turno al crupier.')
     print('3- Si la suma es baja puede optar por sacar otra carta.')
-    print('4- Si la suma de sus cartas es mayor a 21 pierde automáticamente.')
+    print('4- Si la suma de las cartas es mayor a 21 pierde automáticamente.')
     print('5- Si la suma de las cartas con cualquier combinación es igual a 21 gana automáticamente.')
     print('6- La jugada compuesta por un "1" + un "10, 11 u 12" se conoce como Blackjack y gana automáticamente.')
     print('7- Cuando el jugador no quiera más cartas se plantará, cediendo el turno al crupier.')
@@ -75,8 +76,8 @@ def cabecera():
 # menú
 def menu():
     print('Menú')
-    print('s - sacar nueva carta')
-    print('p - plantarte y pasar el turno al crupier')
+    print('s - Sacar nueva carta')
+    print('p - Plantarte y pasar el turno al crupier')
     print()
 
 
@@ -118,9 +119,10 @@ while True:
             break
 
         if suma2_g == 0:
-            if suma1_c > suma1_g:
-                print("(: LA CASA GANA!")
-                break
+            if suma1_c > 10:
+                if suma1_c > suma1_g or suma2_c > suma1_g:
+                    print("(: LA CASA GANA!")
+                    break
 
         if suma2_g > 0 and suma2_g < 22:
             if suma1_c > suma1_g and suma1_c > suma2_g:
