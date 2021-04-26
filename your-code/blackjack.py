@@ -69,6 +69,7 @@ def cabecera():
     print('6- La jugada compuesta por un "1" + un "10, 11 u 12" se conoce como Blackjack y gana automáticamente.')
     print('7- Cuando el jugador no quiera más cartas se plantará, cediendo el turno al crupier.')
     print('8- El jugador jugará la partida del crupier para determinar al vencedor.')
+    print('9- En caso de empate el crupier deberá sacar otra carta para romper el empate.')
     print()
 
 # menú
@@ -115,6 +116,16 @@ while True:
         if suma1_c == 21 or suma2_c == 21:
             print("(: LA CASA GANA!")
             break
+
+        if suma2_g == 0:
+            if suma1_c > suma1_g:
+                print("(: LA CASA GANA!")
+                break
+
+        if suma2_g > 0 and suma2_g < 22:
+            if suma1_c > suma1_g and suma1_c > suma2_g:
+                print("(: LA CASA GANA!")
+                break
 
         if turno == 'Jugador':
             print('Tu turno', jugador)
